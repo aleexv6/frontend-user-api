@@ -1,7 +1,7 @@
 <template>
     <div>
     <form novalidate class="md-layout center-items">
-        <md-card style ="position: absolute; top: 19%" class="md-layout-item md-size-50 md-small-size-100">
+        <md-card style ="position: absolute; top: 30%" class="md-layout-item md-size-50 md-small-size-100">
             <md-card-header>
                 <div class="md-title" style="text-align: center">Mot de passe oublié</div>
             </md-card-header>

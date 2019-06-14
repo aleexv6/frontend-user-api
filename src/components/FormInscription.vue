@@ -1,7 +1,7 @@
 <template>
     <div>
     <form novalidate class="md-layout center-items">
-        <md-card style ="position: fixed; top: 19%" class="md-layout-item md-size-50 md-small-size-100">
+        <md-card style ="position: fixed; top: 12%" class="md-layout-item md-size-50 md-small-size-100">
             <md-card-header>
                 <div class="md-title" style="text-align: center">Inscription</div>
             </md-card-header>
