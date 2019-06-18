@@ -21,7 +21,7 @@ import 'vue-material/dist/vue-material.min.css'
 Vue.use(VueMaterial)
 ```
 
-## Le developpement peut commencer
+# Le developpement peut commencer
 On commencer par la page de connexion :
 ```vue
 <template>
@@ -74,8 +74,54 @@ On commencer par la page de connexion :
     </div>
 </template>
 ```
-### Et voilà à quoi ça ressemble
+## Et voilà à quoi ça ressemble
 
 ![connexion](https://user-images.githubusercontent.com/49818986/59669789-22301880-91bb-11e9-9e82-439240ec7701.png)
 
+Evidemment, il va être très facile de faire une page d'inscription et de mot de passe oublié quand on à réussi la page de connexion.
+
+# Connexion au backend
+On veut que suite au clic sur le bouton se connecter, les informations écrites dans le formulaire soit renvoyés au backend afin qu'il vérifie si l'utilisateur existe et peut se connecter. Pour cela on utilise une librairie Axios qui gère les méthodes HTTP dans vue.
+
+```vue
+import axios from 'axios'
+
+let baseURL = 'http://localhost:8000/api';
+
+
+export const HTTP = axios.create(
+    {
+        baseURL: baseURL
+    });
+```
+Puis dans le fichier du formulaire :
+```vue
+<script>
+    import {HTTP} from '../http-constants'
+    export default {
+        name: "FormConnexion",
+        data() {
+            return {
+                boolean: false,
+                form: {
+                    email: '',
+                    password: ''
+                }
+            }
+        },
+        methods: {
+            getAuth: function(e){
+                e.preventDefault();
+                HTTP.post('/auth/login', this.form)
+                    .then(response => {
+                        HTTP.defaults.headers.common = {'Authorization': `Bearer ${response.data.token}`}
+                        console.log(HTTP);
+                    })
+                    .catch(error => console.log(error))
+            }
+        }
+    }
+</script>
+```
+Et voilà, la reponse au clic sur le bouton "Se connecter" sera la même que sur le backend.
 
