@@ -75,5 +75,6 @@ On commencer par la page de connexion :
 </template>
 ```
 ### Et voilà à quoi ça ressemble
-![alt text](file:///C:/Users/alexl/OneDrive/Documents/site/connexion.png)
+
+
 
