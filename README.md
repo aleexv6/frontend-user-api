@@ -13,7 +13,7 @@ npm install -g @vue/cli
 npm install vue-material --save
 ```
 Puis dans le fichier main.js
-```vue
+```js
 import Vue from 'vue'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
