@@ -83,7 +83,7 @@ Evidemment, il va être très facile de faire une page d'inscription et de mot d
 # Connexion au backend
 On veut que suite au clic sur le bouton se connecter, les informations écrites dans le formulaire soit renvoyés au backend afin qu'il vérifie si l'utilisateur existe et peut se connecter. Pour cela on utilise une librairie Axios qui gère les méthodes HTTP dans vue.
 
-```vue
+```js
 import axios from 'axios'
 
 let baseURL = 'http://localhost:8000/api';
